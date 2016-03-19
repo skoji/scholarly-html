@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/scholarly.min.css">
     <script src="js/scholarly.min.js"></script>
   </head>
-  <body prefix="schema: http://schema.org">
+  <body class="ja" prefix="schema: http://schema.org">
     <header>
       <div class="banner">
         <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
@@ -72,14 +72,13 @@
         encoded.
       </p>
       <p>
-        Scholarly HTMLは、既存のブラウザで利用できる形で学術論文を利用することを可能にする、オープンな
-        標準のみに基づく(ドメイン特化の)データフォーマットです。このドキュメントは、Scholarly HTMLの動作と、
-        フォーマットのやり方を説明します。
+        Scholarly HTMLはオープンな標準のみに基づくドメイン特化のデータフォーマットです。学術論文を既存のブラウザでも利用可能な形で流通させることを可能にします。
+        このドキュメントは、Scholarly HTMLの動作とフォーマットを説明します。
       </p>
     </section>
     <section id="introduction" role="doc-introduction">
       <h2>Introduction</h2>
-      <p>
+      <p class="original">
         Scholarly articles are still primarily published as unstructured data in which most of the
         information created by the research and the practice of authoring is lost. Document
         technology has reached a level of maturity and universality that makes this situation no
@@ -87,20 +86,28 @@
         left its creator’s laptop.
       </p>
       <p>
-        学術論文は現在でも、研究や執筆で作り上げられた情報の多くを失った、構造化されていない形で出版されています。
-        ドキュメント技術は
+        学術論文は現在でも、研究や執筆で作りこまれた情報の多くが欠落した、構造化されていない形で出版されています。
+        現在の文書処理技術には、この状況を終わらせるのに十分な汎用性があり、十分に成熟もしています。
+        しかし著者のノートPCから出ないうちに失われた情報を広めることはできません。
       </p>
-      <p>
+      <p class="original">
         According to the New York Times, adding structured information to their recipes improved
         their discoverability to the point of producing an immediate rise of 52 percent in traffic
         (<a role="doc-biblioref">NYT</a>). At this point in time, cupcake recipes are reaping
         greater benefits from modern data format practices than the whole scientific endeavour.
       </p>
       <p>
+        New York Timesによれば、レシピに構造化情報を加えることでdiscoverabilityが向上し、レシピ発行時のトラフィックが52パーセント増加したということです(<a role="doc-biblioref">NYT</a>)。
+        現時点ではカップケーキのレシピが、科学的な試み全体よりも、モダンなデータフォーマットを使うことによる利点を享受していることになります。
+      </p>
+      <p class="original">
         This places a great burden on tool developers and service providers as well. Anyone who
         has explored the world of extracting data from inert publications has built their own
         complex toolset, offering no interoprability, no opportunity for cooperative improvements,
         and little or no growth in discoverability or meta-analysis in this area.
+      </p>
+      <p>
+        
       </p>
       <p>
         To address these issues, we have followed an approach rooted in established best practices
