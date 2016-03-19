@@ -17,6 +17,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+body.ja {
+    font-family: "Roboto", "游明朝", "YuMincho", "Hiragino Mincho ProN", sans-serif;
+}
+
 /* headers & headings */
 header > h1 {
   margin: 0;
