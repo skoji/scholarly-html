@@ -213,18 +213,31 @@
       </section>
       <section id="article">
         <h3>The <code>article</code></h3>
-        <p>
+        <p class="original">
           The first child of <code>article</code> must be <code>header</code>. The header should
           contain an <code>h1</code> with the title of the document. The following element must be a
           <code>div</code> with the role of <code>contentinfo</code> containing author and
           affiliation information. See <a href="#contentinfo-semantics">The <code>contentinfo</code>
           Region Semantics</a> for information about the semantic decoration of this element.
         </p>
-        <p>
+        <p class="ja-translation">
+          <code>article</code>要素の最初の子要素は<code>header</code>でなくてはなりません。 headerは
+          文書のタイトルを記述した<code>h1</code>を含んでいなくてはなりません。
+          続く要素は、著者と所属の情報を含む、role<code>contentinfo</code>を持つ<code>div</code>でなくてはなりません。
+          この要素のsemanticについては
+          <a href="#contentinfo-semantics">The <code>contentinfo</code>
+          Region Semantics</a>を参照してください。 
+        </p>
+        <p class="original">
           Any number of <code>section</code> elements may be listed within the article at arbitrary
           depths, but each <code>section</code> must begin with an <code>hx</code> element,
           indicating a numbered section in the article. If the sections require headings that exceed
           <code>h6</code>, <code>aria-level</code> must be included to indicate depth.
+        </p>
+        <p class="ja-translation">
+          article内には任意の数の<code>section</code>を任意の深さで含めることができます。
+          各<code>section</code>は番号付きセクションを示す<code>hx</code>で開始しなくてはなりません。
+          もしセクションが<code>h6</code>より深い見出しを必要とするときは、深さを示す<code>aria-level</code>を含めなくてはなりません。
         </p>
         <figure typeof="schema:SoftwareSourceCode" role="doc-example" id="arialevelexample">
           <pre><code>
@@ -236,34 +249,53 @@
           </code></pre>
           <figcaption>Example of a level 7 heading, using <code>aria-level</code></figcaption>
         </figure>
-        <p>
+        <p class="original">
           Each section may contain zero or more <a href="#hunk">Hunk Elements</a> and
           <code>section</code> elements.
+        </p>
+        <p> class="ja-translation">
+          各sectionには0個以上の<a href="#hunk">Hunk Elements</a>と<code>section</code>を含めることができます。
         </p>
       </section>
       <section id="hunk">
         <h3>Hunk Elements</h3>
-        <p>
+        <p class="original">
           Hunk elements are the meaningful blocks from which sections are built. They contain text
           and <a href="#inline">inline elements</a>.   There are several types of hunk elements. All
           content, ranging from long paragraphs to note references and footnotes can be captured
           using this specified set of elements. The method for distinguishing one from another in a
           machine-readable manner is specified in <a href="#semantics">Semantics Overlay</a>.
         </p>
-        <p>
+        <p class="ja-translation">
+          Hunk elementはsectionを組み立てている、意味のあるブロックです。
+          Hunk elementはテキストと、<a href="#inline">inline element</a>を含みます。
+          Hunk elementには幾つかのタイプがあります。長いパラグラフから注の参照、脚注までのすべてのコンテンツは、この要素の集合で記述することができます。
+          それぞれをmachine-readapleに区別する方法は<a href="#semantics">Semantics Overlay</a>に書かれています。
+        </p>
+        <p class="original"> 
           The most common hunk element is
           <a href="https://www.w3.org/TR/html51/semantics.html#the-p-element"><code>p</code></a>.
         </p>
-        <p>
+        <p class="original">
           The
           <a href="https://www.w3.org/TR/html51/semantics.html#the-blockquote-element"><code>blockquote</code></a>,
           <a href="https://www.w3.org/TR/html51/semantics.html#the-ul-element"><code>ul</code></a>,
-          <a href="https://www.w3.org/TR/html51/semantics.html#the-ol-element"<code>ol</code></a>,
+          <a href="https://www.w3.org/TR/html51/semantics.html#the-ol-element"><code>ol</code></a>,
           and
           <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"><code>dl</code></a>
           elements can be used as they typically would and require no special treatment.
         </p>
-        <p>
+        <p class="ja-translation">
+          いちばんありふれたhunk elementは<a href="https://www.w3.org/TR/html51/semantics.html#the-p-element"><code>p</code></a>要素です。
+        </p>
+        <p class="ja-translated">
+          <a href="https://www.w3.org/TR/html51/semantics.html#the-blockquote-element"><code>blockquote</code></a>、
+          <a href="https://www.w3.org/TR/html51/semantics.html#the-ul-element"><code>ul</code></a>、
+          <a href="https://www.w3.org/TR/html51/semantics.html#the-ol-element"><code>ol</code></a>、
+          <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"><code>dl</code></a>
+          要素は通常の方法で使うことができ、特別な扱いは不要です。
+        </p>
+        <p class="original">
           The
           <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"<code>aside</code></a>
           hunk element is used to capture portions of content that stand apart from the main flow of
@@ -276,9 +308,20 @@
           an <code>aside</code> follows a <code>section</code> with a level 3 heading, the top-level
           heading in the <code>aside</code> should be <code>h4</code>.
         </p>
+        <p class="ja-tranlated">
+          <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"><code>aside</code></a>
+          hunk elementは、メインコンテンツの流れとは独立したコンテンツを示すのに使います。
+          これらは、読み手の理解を損なうことなく、articleから分離することができます。
+          よくある使い方は、印刷時のテキストボックスです。
+          <code>aside</code>が<code>header</code>による見出しを含んでいる場合、この見出しは最初の子要素で深さに応じた
+          番号付けをしなくてはなりません。必要があれば、<code>section</code>と同様に、<code>aria-level</code>を使います。
+          <code>aside</code>の他の子要素はすべてhunk elementでなくてはなりません。
+          例えば、<code>aside</code>がlevel 3の見出しを含む<code>section</code>に続いた時、この<code>aside</code>の
+          トップレベルの見出しは<code>h4</code>でなくてはなりません。
+        </p>
         <section id="figures">
           <h4>Figures</h4>
-          <p>
+          <p class="original">
             The
             <a href="https://www.w3.org/TR/html51/semantics.html#the-figure-element"><code>figure</code></a>
             element is a general container for self-contained content units that are embedded inside
@@ -286,12 +329,23 @@
             <code>typeof</code> attribute. Common uses for <code>figure</code> are as a container
             for images, tables, equations, and computer code.
           </p>
-          <p>
+          <p class="ja-translation">
+            <a href="https://www.w3.org/TR/html51/semantics.html#the-figure-element"><code>figure</code></a>
+            要素は、メインのテキストの中に埋め込まれる単独で意味を持つコンテンツを表します。
+            <code>typeof</code>属性を使って種類を示すことができます。
+            <code>figure</code>の主要な用途は、画像・表・数式・プログラムコードです。
+          </p>
+          <p class="original">
             If <code>figure</code> is <code>typeof="sa:image"</code>, it is an image container. It
             must contain an <code>img</code> child element and should contain a <code>figcaption</code>
             labeling that image.
           </p>
-          <p>
+          <p class="ja-translation">
+            <code>figure</code>が属性<code>typeof="sa:image"</code>持つなら、それは画像のコンテナです。
+            <code>img</code>を子要素として含まなくてはなりません。
+            また、その画像のラベルとして<code>figcaption</code>を含まなくてはなりません。
+          </p>
+          <p class="original">
             If <code>figure</code> is a <code>typeof="sa:table"</code>table, it is a table
             container. It must contain a <code>table</code> element. If there is a table caption, it
             should be included using the <code>caption</code> child element of the table, and not
@@ -299,18 +353,33 @@
             included as <code>ol</code> with <code>li</code> elements with the role of
             <code>doc-footnote</code>.
           </p>
-          <p>
+          <p class="ja-translation">
+            <code>figure</code>が属性<code>typeof="sa:table"</code>を持つなら、それは表のコンテナです。
+            <code>table</code>を子要素に持っていなくてはなりません。表にキャプションがある場合、それは<code>figure</code>の子要素の<code>figcaption</code>ではなく、表の子要素の<code>caption</code>を使わなくてはなりません。テーブルの注は<code>ol</code>内に、<code>doc-footnote</code>roleを持つ<code>li</code>として含めることができます。
+          </p>
+          <p class="original">
             If <code>figure</code> is a <code>typeof="sa:formula"</code>, it is a formula container.
             It must contain a <code>math</code> element and, optionally, a <code>figcaption</code>
             describing the formula. The <code>math</code> element must be valid MathML 3.
             Additionally, given the dismal state of support for MathML in Web browsers the math
             element must contain an annotation descendant with the TeX equivalent of the formula.
           </p>
-          <p>
+          <p class="ja-translation">
+            <code>figure</code>が属性<code>typeof="sa:formula"</code>を持つなら、それは数式のコンテナです。
+            <code>math</code>要素を含まなくてはなりません。数式の説明は<code>figcaption</code>で含めることができます。
+            <code>math</code>要素はvalidなMathML 3でなくてはなりません。
+            Webブラウザの貧弱なMathMLサポート状況を鑑みて、math要素にはTeXで等価な数式を含めなくてはなりません。
+          </p>
+          <p class="original">
             If <code>figure</code> is a <code>typeof="schema:SoftwareSourceCode"</code>, it is a
             code container. It must contain a <code>pre</code> element and, optionally, a
             <code>figcaption</code>. The <code>pre</code> element must contain a <code>code</code>
             element as its only child.
+          </p>
+          <p class="ja-translation">
+            <code>figure</code>が属性<code>typeof="schema:SoftwareSourceCode"</code>を持つなら、それはコードのコンテナです。
+            <code>pre</code>を子要素として含まなくてはなりません。
+            <code>figcaption</code>を含むことができます。<code>pre</code>要素は<code>code</code>を唯一の子要素として含まなくてはなりません。
           </p>
         </section>
       </section>
