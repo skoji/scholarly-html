@@ -18,3 +18,10 @@ A browser friendly reading of the specifications in this repository is possible 
 If you are member of that Community Group and you want to be added as a possible direct contributor
 to this repository, please contact Robin Berjon (robin@berjon.com) or Ivan Herman (ivan@w3.org),
 providing them with your github handle.
+
+## Unofficial translation to Japanese/日本語非公式翻訳
+
+This fork is an unofficial Japanese translation by skoji.
+このForkは、小嶋(@skoji)による日本語非公式翻訳(作業中)です。
+
+You can read the translated text at [GitHub Pages](http://skoji.github.io/scholarly-html/index.ja.html)
