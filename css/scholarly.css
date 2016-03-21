@@ -106,10 +106,10 @@ body.ja {
   font-family: "Roboto", "游明朝", "YuMincho", "Hiragino Mincho ProN", sans-serif;
 }
 
-.original {
+p[lang="en"] {
     color: #888888;
 }
 
-p.ja-translation {
+p[lang="ja"] {
     text-indent: 1em;
 }

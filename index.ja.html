@@ -65,13 +65,13 @@
     </div>
     <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
       <h2>Abstract</h2>
-      <p class="original">
+      <p lang="en">
         Scholarly HTML is a domain-specific rich document format built entirely on open standards
         that enables the interoperable exchange of scholarly articles in a manner that is compatible
         with off-the-shelf browsers. This document describes how Scholarly HTML works and how it is
         encoded.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         Scholarly HTMLはオープンな標準のみに基づくドメイン特化のリッチドキュメントフォーマットです。
         これにより、学術論文を既存のブラウザでも利用可能な形で流通させることができます。
         このドキュメントは、Scholarly HTMLの動作とフォーマットを説明します。
@@ -79,38 +79,38 @@
     </section>
     <section id="introduction" role="doc-introduction">
       <h2>Introduction</h2>
-      <p class="original">
+      <p lang="en">
         Scholarly articles are still primarily published as unstructured data in which most of the
         information created by the research and the practice of authoring is lost. Document
         technology has reached a level of maturity and universality that makes this situation no
         longer tenable. Information cannot be disseminated if it is destroyed before even having
         left its creator’s laptop.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         学術論文はいまだに、研究や執筆で作りこまれた情報の多くが欠落した、構造化されていない状態で出版されています。
         現在の文書処理技術にはこの状況を解決するのに十分な汎用性があり、十分に成熟もしています。
         しかし作成者のノートPCから外に出もしないうちに失われた情報はどうやっても使うことはできません。
       </p>
-      <p class="original">
+      <p lang="en">
         According to the New York Times, adding structured information to their recipes improved
         their discoverability to the point of producing an immediate rise of 52 percent in traffic
         (<a role="doc-biblioref">NYT</a>). At this point in time, cupcake recipes are reaping
         greater benefits from modern data format practices than the whole scientific endeavour.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         New York Timesによれば、レシピに構造化情報を加えることでdiscoverabilityが向上し、レシピ発行時のトラフィックが52パーセント増加したということです(<a role="doc-biblioref">NYT</a>)。
         現時点ではカップケーキのレシピが、科学的な試み全体よりも、モダンなデータフォーマットを使うことによる利点を享受していることになります。
       </p>
-      <p class="original">
+      <p lang="en">
         This places a great burden on tool developers and service providers as well. Anyone who
         has explored the world of extracting data from inert publications has built their own
         complex toolset, offering no interoprability, no opportunity for cooperative improvements,
         and little or no growth in discoverability or meta-analysis in this area.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         この状況はツールの開発者やサービスの提供者にとっても大きな負荷になっています。融通のきかない出版物からデータを取り出そうとしたことがある人は皆、自分たちの複雑なツールセットを作っています。しかしそれらは相互運用することはできず、協力して出版物を改善する方法を提供することはできず、discoverabilityやメタ解析の改善にはほとんど(あるいはまったく)役に立ちません。
       </p>
-      <p class="original">
+      <p lang="en">
         To address these issues, we have followed an approach rooted in established best practices
         for the reuse of open, standard formats. We propose an "HTML Vernacular", a set of
         guidelines for the creation of domain-specific data formats that make use of HTML’s
@@ -121,15 +121,15 @@
         <a href="http://www.nytimes.com/2016/03/16/science/asap-bio-biologists-published-to-the-internet.html?_r=1">rogue
         scientists</a> who choose to publish their articles on their own.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         これらの問題に対処するために私たちは、オープンで標準化されたフォーマットの再利用で確立されたベストプラクティスに基づいた手法を使うことにしました。
         私たちは"HTMLの方言" —— HTMLに本来備わった拡張性を利用して、ドメイン特有のデータフォーマットを定義するガイドラインを提案します(<a role="doc-biblioref">Science.AI, 2015</a>)。schema.orgのメタデータとその拡張を利用した「方言」を土台に、学術論文を執筆し交換するためのフォーマットを、誰にでも使える形でオープン標準に基づいて作りました。これが、論文を自分たちで出版することを選択した<a href="http://www.nytimes.com/2016/03/16/science/asap-bio-biologists-published-to-the-internet.html?_r=1">rogue
         scientists</a>たちの役に立つことを願っています。
       </p>
-      <p class="original">
+      <p lang="en">
         Our high-level goals are to:
       </p>
-      <ul class="original">
+      <ul lang="en">
         <li>Enable structured metadata, accessibility, and internationalisation.</li>
         <li>Be fully funcitioning on modern Web browsers.</li>
         <li>
@@ -139,10 +139,10 @@
         <li>Build on top of open, royalty-free standards.</li>
         <li>Long-term viability as a data format.</li>
       </ul>
-      <p class="ja-translation">
+      <p lang="ja">
         私たちの大きな目標は以下の通りです。
       </p>
-      <ul class="ja-translation">
+      <ul lang="ja">
         <li>構造化されたメタデータ、アクセシビリティ、国際化</li>
         <li>モダンブラウザで完全に動作</li>
         <li>
@@ -151,7 +151,7 @@
         <li>オープンで、ロイヤリティ・フリーの標準に基づく</li>
         <li>データフォーマットとして長期利用ができる</li>
       </ul>
-      <p class="original">
+      <p lang="en">
         Where semantic modeling is concerned, our approach is to stick as much as possible to the
         schema.org. Beyond the obvious advantages there are in reusing a vocabulary that is
         supported by all the major search engines and is actively being developed towards enabling a
@@ -160,26 +160,26 @@
         insufficient input from a broader community of practice. A language that solely a single
         participant understands is of limited value.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         セマンティックなモデリングについては、私たちは可能な限りschema.orgを利用するアプローチをとります。
         多くの主要なサーチエンジンでサポートされており、多くの有用なコンセプトの共通理解の構築に向けて活発に開発されているという明確な利点があるだけでなく、
         小さな団体によって、実践的なコミュニティからのインプットをきちんと得ないで新たなvocabraryが作られることによる<i>ontological drift</i>を避けることもできます。
         ひとりしか理解していない言語には、限定的な価値しかありません。
       </p>
-      <p class="original">
+      <p lang="en">
         In a limited number of cases we have had to depart from schema.org, using the
         <code>https://ns.science.ai/</code>, prefixed with <code>sa:</code>. Our goal is to work
         with schema.org in order to extend their vocabulary, and we will align our usage with the
         outcome of these discussions.
       </p>
-      <p class="ja-translation">
+      <p lang="ja">
         限られたケースで、現在のところ私たちはschema.orgを使わずに<code>https://ns.science.ai/</code>をprefix <code>sa:</code>付きで使っています。
         schema.orgと協力して彼らのvocabularyを拡張しその議論の結果にScholarly HTMLでのvocaburarlyの使い方をあわせるのが今後のゴールです。
       </p>
     </section>
     <section id="structure">
       <h2>Structure</h2>
-      <p class="original">
+      <p lang="en">
         A Scholarly HTML document is a valid <a role="doc-biblioref">HTML</a> document that follows
         some additional rules to specialize its meaning and make it predictable to processors
         wishing to produce or consume scholarly articles. These rules are outlined in the following
@@ -187,7 +187,7 @@
         stone to enable semantic enrichment, detailed in <a href="#semantics">Semantics
         Overlays</a>. If you would like to write a validation tool, please join us on GitHub.
       </p>
-      <p class="ja-tranlation">
+      <p lang="ja">
         Scholarly HTML文書はvalidな<a role="doc-biblioref">HTML</a>文書にいくつかのルールを加えたものです。
         このルールは、学術論文を生成したり読み込んだりする処理系が利用可能な意味を文書に与えます。
         次節以下でこれらについて説明します。ここで定義する文書構造はそれ自体でもちろん価値がありますが、<a href="#semantics">Semantics
@@ -196,31 +196,31 @@
       </p>
       <section id="Root">
         <h3>The root and <code>head</code></h3>
-        <p class="original">
+        <p lang="en">
           The document must be encoded in UTF-8 and transmitted with a media type of
           <code>text/html</code>.
         </p>
-        <p class="original">
+        <p lang="en">
           The <code>head</code> must contain <code>&lt;meta charset="utf-8"&gt;</code> element and a
           <code>title</code> element.
         </p>
-        <p class="ja-translation">
+        <p lang="ja">
           文書はUTF-8でエンコードされて、メディアタイプ<code>text/html</code>で送信されなくてはなりません。
         </p>
-        <p class="ja-translation">
+        <p lang="ja">
           <code>head</code>には<code>&lt;meta charset="utf-8"&gt;</code>と<code>title</code>を含めなくてはなりません。
         </p>
       </section>
       <section id="article">
         <h3>The <code>article</code></h3>
-        <p class="original">
+        <p lang="en">
           The first child of <code>article</code> must be <code>header</code>. The header should
           contain an <code>h1</code> with the title of the document. The following element must be a
           <code>div</code> with the role of <code>contentinfo</code> containing author and
           affiliation information. See <a href="#contentinfo-semantics">The <code>contentinfo</code>
           Region Semantics</a> for information about the semantic decoration of this element.
         </p>
-        <p class="ja-translation">
+        <p lang="ja">
           <code>article</code>要素の最初の子要素は<code>header</code>でなくてはなりません。 headerは
           文書のタイトルを記述した<code>h1</code>を含んでいなくてはなりません。
           続く要素は、著者と所属の情報を含む、role<code>contentinfo</code>を持つ<code>div</code>でなくてはなりません。
@@ -228,13 +228,13 @@
           <a href="#contentinfo-semantics">The <code>contentinfo</code>
           Region Semantics</a>を参照してください。 
         </p>
-        <p class="original">
+        <p lang="en">
           Any number of <code>section</code> elements may be listed within the article at arbitrary
           depths, but each <code>section</code> must begin with an <code>hx</code> element,
           indicating a numbered section in the article. If the sections require headings that exceed
           <code>h6</code>, <code>aria-level</code> must be included to indicate depth.
         </p>
-        <p class="ja-translation">
+        <p lang="ja">
           article内には任意の数の<code>section</code>を任意の深さで含めることができます。
           各<code>section</code>は番号付きセクションを示す<code>hx</code>で開始しなくてはなりません。
           もしセクションが<code>h6</code>より深い見出しを必要とするときは、深さを示す<code>aria-level</code>を含めなくてはなりません。
@@ -249,34 +249,34 @@
           </code></pre>
           <figcaption>Example of a level 7 heading, using <code>aria-level</code></figcaption>
         </figure>
-        <p class="original">
+        <p lang="en">
           Each section may contain zero or more <a href="#hunk">Hunk Elements</a> and
           <code>section</code> elements.
         </p>
-        <p> class="ja-translation">
+        <p> lang="ja">
           各sectionには0個以上の<a href="#hunk">Hunk Elements</a>と<code>section</code>を含めることができます。
         </p>
       </section>
       <section id="hunk">
         <h3>Hunk Elements</h3>
-        <p class="original">
+        <p lang="en">
           Hunk elements are the meaningful blocks from which sections are built. They contain text
           and <a href="#inline">inline elements</a>.   There are several types of hunk elements. All
           content, ranging from long paragraphs to note references and footnotes can be captured
           using this specified set of elements. The method for distinguishing one from another in a
           machine-readable manner is specified in <a href="#semantics">Semantics Overlay</a>.
         </p>
-        <p class="ja-translation">
+        <p lang="ja">
           Hunk elementはsectionを組み立てている、意味のあるブロックです。
           Hunk elementはテキストと、<a href="#inline">inline element</a>を含みます。
           Hunk elementには幾つかのタイプがあります。長いパラグラフから注の参照、脚注までのすべてのコンテンツは、この要素の集合で記述することができます。
           それぞれをmachine-readapleに区別する方法は<a href="#semantics">Semantics Overlay</a>に書かれています。
         </p>
-        <p class="original"> 
+        <p lang="en"> 
           The most common hunk element is
           <a href="https://www.w3.org/TR/html51/semantics.html#the-p-element"><code>p</code></a>.
         </p>
-        <p class="original">
+        <p lang="en">
           The
           <a href="https://www.w3.org/TR/html51/semantics.html#the-blockquote-element"><code>blockquote</code></a>,
           <a href="https://www.w3.org/TR/html51/semantics.html#the-ul-element"><code>ul</code></a>,
@@ -285,7 +285,7 @@
           <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"><code>dl</code></a>
           elements can be used as they typically would and require no special treatment.
         </p>
-        <p class="ja-translation">
+        <p lang="ja">
           いちばんありふれたhunk elementは<a href="https://www.w3.org/TR/html51/semantics.html#the-p-element"><code>p</code></a>要素です。
         </p>
         <p class="ja-translated">
@@ -295,7 +295,7 @@
           <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"><code>dl</code></a>
           要素は通常の方法で使うことができ、特別な扱いは不要です。
         </p>
-        <p class="original">
+        <p lang="en">
           The
           <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"<code>aside</code></a>
           hunk element is used to capture portions of content that stand apart from the main flow of
@@ -321,7 +321,7 @@
         </p>
         <section id="figures">
           <h4>Figures</h4>
-          <p class="original">
+          <p lang="en">
             The
             <a href="https://www.w3.org/TR/html51/semantics.html#the-figure-element"><code>figure</code></a>
             element is a general container for self-contained content units that are embedded inside
@@ -329,23 +329,23 @@
             <code>typeof</code> attribute. Common uses for <code>figure</code> are as a container
             for images, tables, equations, and computer code.
           </p>
-          <p class="ja-translation">
+          <p lang="ja">
             <a href="https://www.w3.org/TR/html51/semantics.html#the-figure-element"><code>figure</code></a>
             要素は、メインのテキストの中に埋め込まれる単独で意味を持つコンテンツを表します。
             <code>typeof</code>属性を使って種類を示すことができます。
             <code>figure</code>の主要な用途は、画像・表・数式・プログラムコードです。
           </p>
-          <p class="original">
+          <p lang="en">
             If <code>figure</code> is <code>typeof="sa:image"</code>, it is an image container. It
             must contain an <code>img</code> child element and should contain a <code>figcaption</code>
             labeling that image.
           </p>
-          <p class="ja-translation">
+          <p lang="ja">
             <code>figure</code>が属性<code>typeof="sa:image"</code>持つなら、それは画像のコンテナです。
             <code>img</code>を子要素として含まなくてはなりません。
             また、その画像のラベルとして<code>figcaption</code>を含まなくてはなりません。
           </p>
-          <p class="original">
+          <p lang="en">
             If <code>figure</code> is a <code>typeof="sa:table"</code>table, it is a table
             container. It must contain a <code>table</code> element. If there is a table caption, it
             should be included using the <code>caption</code> child element of the table, and not
@@ -353,30 +353,30 @@
             included as <code>ol</code> with <code>li</code> elements with the role of
             <code>doc-footnote</code>.
           </p>
-          <p class="ja-translation">
+          <p lang="ja">
             <code>figure</code>が属性<code>typeof="sa:table"</code>を持つなら、それは表のコンテナです。
             <code>table</code>を子要素に持っていなくてはなりません。表にキャプションがある場合、それは<code>figure</code>の子要素の<code>figcaption</code>ではなく、表の子要素の<code>caption</code>を使わなくてはなりません。テーブルの注は<code>ol</code>内に、<code>doc-footnote</code>roleを持つ<code>li</code>として含めることができます。
           </p>
-          <p class="original">
+          <p lang="en">
             If <code>figure</code> is a <code>typeof="sa:formula"</code>, it is a formula container.
             It must contain a <code>math</code> element and, optionally, a <code>figcaption</code>
             describing the formula. The <code>math</code> element must be valid MathML 3.
             Additionally, given the dismal state of support for MathML in Web browsers the math
             element must contain an annotation descendant with the TeX equivalent of the formula.
           </p>
-          <p class="ja-translation">
+          <p lang="ja">
             <code>figure</code>が属性<code>typeof="sa:formula"</code>を持つなら、それは数式のコンテナです。
             <code>math</code>要素を含まなくてはなりません。数式の説明は<code>figcaption</code>で含めることができます。
             <code>math</code>要素はvalidなMathML 3でなくてはなりません。
             Webブラウザの貧弱なMathMLサポート状況を鑑みて、math要素にはTeXで等価な数式を含めなくてはなりません。
           </p>
-          <p class="original">
+          <p lang="en">
             If <code>figure</code> is a <code>typeof="schema:SoftwareSourceCode"</code>, it is a
             code container. It must contain a <code>pre</code> element and, optionally, a
             <code>figcaption</code>. The <code>pre</code> element must contain a <code>code</code>
             element as its only child.
           </p>
-          <p class="ja-translation">
+          <p lang="ja">
             <code>figure</code>が属性<code>typeof="schema:SoftwareSourceCode"</code>を持つなら、それはコードのコンテナです。
             <code>pre</code>を子要素として含まなくてはなりません。
             <code>figcaption</code>を含むことができます。<code>pre</code>要素は<code>code</code>を唯一の子要素として含まなくてはなりません。
