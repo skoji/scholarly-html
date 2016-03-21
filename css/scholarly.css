@@ -17,10 +17,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-body.ja {
-    font-family: "Roboto", "游明朝", "YuMincho", "Hiragino Mincho ProN", sans-serif;
-}
-
 /* headers & headings */
 header > h1 {
   margin: 0;
@@ -102,4 +98,18 @@ p.issue {
   body {
     margin: 0 2em;
   }
+}
+
+/* translation */
+
+body.ja {
+  font-family: "Roboto", "游明朝", "YuMincho", "Hiragino Mincho ProN", sans-serif;
+}
+
+.original {
+    color: #888888;
+}
+
+p.ja-translation {
+    text-indent: 1em;
 }
