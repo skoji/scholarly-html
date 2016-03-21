@@ -254,7 +254,7 @@
           <code>section</code> elements.
         </p>
         <p> lang="ja">
-          各sectionには0個以上の<a href="#hunk">Hunk Elements</a>と<code>section</code>を含めることができます。
+          各sectionには0個以上の<a href="#hunk">Hunk要素</a>と<code>section</code>を含めることができます。
         </p>
       </section>
       <section id="hunk">
@@ -267,9 +267,9 @@
           machine-readable manner is specified in <a href="#semantics">Semantics Overlay</a>.
         </p>
         <p lang="ja">
-          Hunk elementはsectionを組み立てている、意味のあるブロックです。
-          Hunk elementはテキストと、<a href="#inline">inline element</a>を含みます。
-          Hunk elementには幾つかのタイプがあります。長いパラグラフから注の参照、脚注までのすべてのコンテンツは、この要素の集合で記述することができます。
+          Hunk要素はsectionを組み立てている、意味のあるブロックです。
+          Hunk要素はテキストと、<a href="#inline">inline element</a>を含みます。
+          Hunk要素には幾つかのタイプがあります。長いパラグラフから注の参照、脚注までのすべてのコンテンツは、この要素の集合で記述することができます。
           それぞれをmachine-readapleに区別する方法は<a href="#semantics">Semantics Overlay</a>に書かれています。
         </p>
         <p lang="en"> 
@@ -286,7 +286,7 @@
           elements can be used as they typically would and require no special treatment.
         </p>
         <p lang="ja">
-          いちばんありふれたhunk elementは<a href="https://www.w3.org/TR/html51/semantics.html#the-p-element"><code>p</code></a>要素です。
+          いちばんありふれたhunk要素は<a href="https://www.w3.org/TR/html51/semantics.html#the-p-element"><code>p</code></a>要素です。
         </p>
         <p class="ja-translated">
           <a href="https://www.w3.org/TR/html51/semantics.html#the-blockquote-element"><code>blockquote</code></a>、
@@ -310,12 +310,12 @@
         </p>
         <p class="ja-tranlated">
           <a href="https://www.w3.org/TR/html51/semantics.html#the-dl-element"><code>aside</code></a>
-          hunk elementは、メインコンテンツの流れとは独立したコンテンツを示すのに使います。
+          hunk要素は、メインコンテンツの流れとは独立したコンテンツを示すのに使います。
           これらは、読み手の理解を損なうことなく、articleから分離することができます。
           よくある使い方は、印刷時のテキストボックスです。
           <code>aside</code>が<code>header</code>による見出しを含んでいる場合、この見出しは最初の子要素で深さに応じた
           番号付けをしなくてはなりません。必要があれば、<code>section</code>と同様に、<code>aria-level</code>を使います。
-          <code>aside</code>の他の子要素はすべてhunk elementでなくてはなりません。
+          <code>aside</code>の他の子要素はすべてhunk要素でなくてはなりません。
           例えば、<code>aside</code>がlevel 3の見出しを含む<code>section</code>に続いた時、この<code>aside</code>の
           トップレベルの見出しは<code>h4</code>でなくてはなりません。
         </p>
@@ -385,13 +385,21 @@
       </section>
       <section id="inline">
         <h3>Inline Elements</h3>
-        <p>
+        <p lang="en">
           <a href="https://www.w3.org/TR/html51/semantics.html#text-level-semantics">Inline
           elements</a> decorate, describe, and enrich text. Inline elements can be used inside of
           hunk elements, heading elements, and captioning elements. Where applicable, they can nest
           within one another. Inline images and inline math can be inlcuded as well. This can be
           accomplished using <code>img</code> for images or <code>math</code> for formulas.
           Equations can be displayed inline or as blocks within a paragaph.
+        </p>
+        <p lang="ja">
+          <a href="https://www.w3.org/TR/html51/semantics.html#text-level-semantics">インライン
+          要素</a>はテキストを装飾したり、テキストについて説明をしたり、 テキストを肉付けしたりします。
+          インライン要素はhunk 要素、見出し要素、そしてキャプション要素の中で使うことができます。
+          互いにネストできる場合もあります。インライン画像やインラインのmathも含めることができます。
+          画像は<code>img</code>を、数式は<code>math</code>を使うことでインラインにすることができます。
+          数式は、インラインまたはパラグラフ内のブロックとして表示できます。
         </p>
         <figure typeof="schema:SoftwareSourceCode" resource="#mathblock-example"
                 id="mathblock-example" role="doc-example">
@@ -439,25 +447,39 @@
       </section>
       <section id="references">
         <h3>References</h3>
-        <p>
+        <p lang="en">
           The References section requires specific <a href="#citations">semantic overlays</a>
           (reference) as well as strict content structure. Apart from a (required) <code>hx</code>
           element, it must contain only one <code>ol</code> or <code>dl</code> element.
         </p>
-        <p>
+        <p lang="ja">
+          参考文献セクションは特定の<a href="#citations">semantic overlays</a>と厳密な構造を必要とします。
+          必須の<code>hx</code>要素の他に、<code>ol</code>要素か<code>dl</code>要素のいずれか一方を一つだけ含んでいる必要があります。
+        </p>
+        <p lang="en">
           If using a <code>dl</code> element, the contents must be alternating <code>dt</code> and
           <code>dd</code> elements. The <code>dd</code> must contain the citation.
         </p>
+        <p lang="ja">
+          <code>dl</code>要素の内容は、<code>dt</code>要素と<code>dd</code>要素が交互に出現しなくてはなりません。
+          <code>dd</code>要素は引用を含まなくてはなりません。
+        </p>
         <!-- XXX add references to sem as well as CSS to rearrange order based on citation format -->
-        <p>
+        <p lang="en">
           If using <code>ol</code>, the only contents are <code>li</code> that include citations.
+        </p>
+        <p lang="ja">
+          <code>ol</code>は、引用を含む<code>li</code>要素だけを子要素にしなくてはなりません。
         </p>
       </section>
 
       <section id="interactive">
         <h3>Interactive Elements</h3>
-        <p>
+        <p lang="en">
           information about iframes to come
+        </p>
+        <p lang="ja">
+          iframeに関する情報が書かれます。
         </p>
         <p class="issue">
           Let’s discuss details of iframes with the CG
@@ -465,7 +487,7 @@
       </section>
       <section id="HTMLRoles">
         <h3>HTML Roles</h3>
-        <p>
+        <p lang="en">
           It is possible to provide information about an HTML element by decorating it with the
           <a href="https://www.w3.org/TR/html51/dom.html#aria-role-attribute">role</a> attribute. The
           <a href="https://www.w3.org/TR/wai-aria-1.1/">ARIA</a> vocabulary and its extensions provide
@@ -473,7 +495,7 @@
           <a href="https://www.w3.org/TR/dpub-aria-1.0/">DPUB-ARIA</a> should be applied where
           appropriate:
         </p>
-        <ul>
+        <ul lang="en">
           <li>
             <a href="https://www.w3.org/TR/wai-aria-1.1/#contentinfo">contentinfo</a> to apply to the
             <code>div</code> containing author and affiliation information
@@ -548,6 +570,82 @@
             that a portion of a heading is a secondary or alternate title of the work
           </li>
         </ul>
+        <p lang="ja">
+          <a href="https://www.w3.org/TR/html51/dom.html#aria-role-attribute">role</a>属性で修飾することにより、HTML要素の情報を提供することができます。
+          <a href="https://www.w3.org/TR/wai-aria-1.1/">ARIA</a>ボキャブラリとその拡張は、文書構造に関する便利な用語を提供します。
+          下記の、ARIA及び<a href="https://www.w3.org/TR/dpub-aria-1.0/">DPUB-ARIA</a>由来のroleを、適切な場所で利用しなくてはなりません。
+        </p>
+        <ul lang="ja">
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.1/#contentinfo">contentinfo</a>を
+            著者と所属を含んだ<code>div</code>に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.1/#definition">definition</a>を、
+            キーワードや用語などの定義に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.1/#term">term</a>を、定義に対応する用語に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.1/#presentation">presentation</a>を、純粋に装飾的な画像を示すために適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-abstract">doc-abstract</a>を、abstractを含む
+            <code>section</code>に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-acknowledgments">doc-acknowledgments</a>
+            を、謝辞を含む<code>section</code>に適用します。（Funding informationとは別であることに注意）
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-appendix">doc-appendix</a>を、 
+            appendixを含む<code>section</code>に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-biblioentry">doc-biblioentry</a>
+            を、引用を含むリスト要素に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-bibliography">doc-bibliography</a>
+            を、参考文献や引用された研究のリストを含む<code>section</code>に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-conclusion">doc-conclusion</a>
+            を、明確に論文の結論を述べる<code>section</code>に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-dedication">doc-dedication</a>を、
+            献辞を含む要素に適用します（任意のhunk要素に適用できます）
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-endnote">doc-endnote</a>を
+            個別の注釈に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-dedication">doc-endnotes</a>を
+            注釈の<code>section</code>に適用します。
+          </li>
+          <li class="issue">
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-errata">doc-errata</a>を...
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-example">doc-example</a>
+            を、コードサンプルなどの実例を含むhunk要素に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-footnote">doc-footnote</a>を、
+            著者に関する注釈や表の脚注などの、個別の注釈要素に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-introduction">doc-introduction</a>
+            を、適切な場合は論文のイントロダクションを含む<code>section</code>に適用します。
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-subtitle">doc-subtitle</a>
+            を、研究の副次的、あるいは大体のタイトルを示す見出し要素に適用します。
+          </li>
+        </ul>
         <p class="issue">
           Should we require ARIA’s table, grid, rowheader, and rowgroup?
         </p>
@@ -561,13 +659,20 @@
       </section>
       <section id="validate">
         <h3>Validation</h3>
-        <p>
+        <p lang="en">
           The only validation requirement for Scholarly HTML at this point is that the HTML is valid.
           We are considering building a a validation tool in RelaxNG or JavaScript to check compliance
           with this set of rules.
         </p>
-        <p>
+        <p lang="ja">
+          現時点でSchlarly HTMLのvalidationに要求されるのは、HTMLとしてvalidかどうかだけです。
+          私たちは、RelaxNGかJavaScriptで、このルールに適合しているかどうか確認するvalidation toolの作成を検討しています。
+        </p>
+        <p lang="en">
           Articles should be in the following basic structure:
+        </p>
+        <p lang="ja">
+          論文は次の基本的な構造を持っていなくてはなりません。
         </p>
         <ul>
           <li>heading with article title</li>
@@ -581,8 +686,11 @@
             </ul>
           </li>
         </ul>
-        <p>
+        <p lang="en">
           It must feature a <code>DOCTYPE</code> as its preamble.
+        </p>
+        <p lang="ja">
+          先頭には<code>DOCTYPE</code>が必要です。
         </p>
       </section>
     </section>
