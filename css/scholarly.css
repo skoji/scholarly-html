@@ -106,7 +106,7 @@ body.ja {
   font-family: "Roboto", "游明朝", "YuMincho", "Hiragino Mincho ProN", sans-serif;
 }
 
-p[lang="en"] {
+[lang="en"],[lang="en"] * {
     color: #888888;
 }
 
