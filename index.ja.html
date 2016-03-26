@@ -696,7 +696,7 @@
     </section>
     <section id="semantics">
       <h2>Semantics Overlay</h2>
-      <p>
+      <p lang="en">
         HTML provides an excellent backbone with which to capture the
         <a href="#structure">structure</a> of a given text but is evidently limited when it comes to
         capturing more domain-specific concepts such as people, spaceships,
@@ -708,12 +708,23 @@
         <a role="doc-biblioref">WAI-ARIA</a> and <a role="doc-biblioref">DPUB-ARIA</a>, and
         semantics rooted in structured data as captured by <a role="doc-biblioref">RDFa</a>.
       </p>
-      <p>
+      <p lang="ja">
+        HTMLは与えられたテキストの<a href="#structure">構造</a>を捉えることには長けていますが、
+        ドメイン固有の概念 —— 人々、宇宙船、<a href="http://existentialcomics.com/comic/122">ヒュームの法則</a>、あるいは
+        <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109888">ステネルス</a>などを扱う力は限られています。
+
+        これが、HTML要素の意味や関係をより豊かにすることが可能なsemantic overlayが活躍できる場面です。
+
+        Scholarly HTMLは、HTML DOMの上にsemanticsを重ねるために、2種類の標準的なメカニズムを使います。
+        roleに基づいて定義された<a role="doc-biblioref">WAI-ARIA</a>および<a role="doc-biblioref">DPUB-ARIA</a>と、
+        <a role="doc-biblioref">RDFa</a>による構造化データに基づいたsemanticsです。
+      </p>
+      <p lang="en">
         Using technologies related to the semantic web can at times feel daunting and unrelated to
         everyday web development. In order to suppress this disconnect, Scholarly HTML follows a
         few simple guiding principles:
       </p>
-      <ul>
+      <ul lang="en">
         <li>
           The number of prefixes used for semantic properties is kept as small as possible;
         </li>
@@ -727,7 +738,24 @@
           with relative ease (notably <a href="#roles">roles</a> and actions).
         </li>
       </ul>
-      <p>
+      <p lang="ja">
+        セマンティックWebに関連する技術は日常のWeb開発には関係ないし、面倒に感じるかもしれません。
+        Schlarly HTMLは以下のシンプルなガイドラインに従うことで、その問題を軽減します。
+      </p>
+      <ul lang="ja">
+        <li>
+          semantic propertyに使われるプレフィックスの数は可能な限り少なくします
+        </li>
+        <li>
+          URI(とかURN、IRI、XRI、その他見たこともなくて紛らわしいもの)は存在しません。全てはURLです。
+        </li>
+        <li>
+          より複雑なモデリングが必要な時は、小さくて汎用的なパターンを組み合わせて作ります。
+          このパターン自体の学習が最初に必要な場合もありますが、比較的簡単に、ちゃんとした形で使うことができます。
+          （<a href="#roles">role</a>やactionは良い例です）
+        </li>
+      </ul>
+      <p lang="en">
         The properties that Scholarly HTML uses are naturally document-related (authorship,
         keywords, license, citations, as well as specific structure types such as acknowledgements,
         introduction, or funding), which additionally requires the ability to describe people and
@@ -737,6 +765,15 @@
         Data Citations</a> Scholarly HTML relies almost exclusively on
         <a role="doc-biblioref">schema.org</a>, complemented by a small number of additions from
         the <a href="#scholarly-article">Scholarly Article Vocabulary</a>.
+      </p>
+      <p lang="ja">
+        Scholarly HTMLは、ドキュメントに自然な関連があるプロパティ（例えば著作者、キーワード、
+        ライセンス、引用、そして謝辞、イントロダクション、fundingのような特定の構造)だけを扱います。
+        これらのプロパティは人や組織を記述できる必要があります。
+        人や組織が記述できて<a role="doc-biblioref">RDFa</a>で使うことができるvocabraryはたくさんあります。
+        しかしSchlary HTMLは<a href="https://research.science.ai/article/web-first-data-citations#choice-of-ontology">Web-First
+          Data Citations</a>に詳しく書いた理由により、もっぱら<a role="doc-biblioref">schema.org</a>を使い、
+        ほんの少しだけ<a href="#scholarly-article">Scholarly Article Vocabulary</a>で補います。
       </p>
       <section id="person-org">
         <h3>Persons &amp; Organizations</h3>
