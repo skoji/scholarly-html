@@ -713,7 +713,7 @@
         ドメイン固有の概念 —— 人々、宇宙船、<a href="http://existentialcomics.com/comic/122">ヒュームの法則</a>、あるいは
         <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0109888">ステネルス</a>などを扱う力は限られています。
 
-        これが、HTML要素の意味や関係をより豊かにすることが可能なsemantic overlayが活躍できる場面です。
+        HTML要素の意味や関係をより豊かにすることが可能なsemantic overlayが活躍できる場面です。
 
         Scholarly HTMLは、HTML DOMの上にsemanticsを重ねるために、2種類の標準的なメカニズムを使います。
         roleに基づいて定義された<a role="doc-biblioref">WAI-ARIA</a>および<a role="doc-biblioref">DPUB-ARIA</a>と、
@@ -777,18 +777,28 @@
       </p>
       <section id="person-org">
         <h3>Persons &amp; Organizations</h3>
-        <p>
+        <p lang="en">
           Marking up persons and organizations can make use of any applicable properties in
           <a>schema:Person</a> and <a>schema:Organization</a>, respectively, but it is worth
           pointing out some good practices with how these are to be used in practice.
         </p>
-        <p>
+        <p lang="ja">
+          人や組織は、それぞれ<a>schema:Person</a>と<a>schema:Organization</a>
+          の適切なプロパティを利用すればマークアップできます。
+          実際にこれらを使うときの良いプラクティスをいくつか例示します。
+        </p>
+        <p lang="en">
           If the entity in question has a URL then it is best to use that as its identifier (using
           the <code>resource</code> attribute) and additionally to provide it as a link using the
           <code>a</code> element (see the <a href="#person-example">person example</a> for an
           instance of this).
         </p>
-        <p>
+        <p lang="ja">
+          もしマークアップ対象である人や組織のURLがあるなら、<code>resource</code>属性を使ってそのURLをidentifier
+          にして、場合によっては<code>a</code>要素でリンクにするのが良いでしょう
+          （<a href="#person-example">person example</a>にこの実例があります)。
+        </p>
+        <p lang="en">
           If you happen to have information providing both the
           <a>schema:givenName</a>/<a>schema:familyName</a><a>schema:additionalName</a> triple and
           the <a>schema:name</a> (which can be considered to contain the name as the person wishes
@@ -797,6 +807,13 @@
           extraneous ones (alternatively, they can be captured using the <code>meta</code> element).
           The reason for this is that it exposes more information to machine consumers without
           having a negative impact on human readers.
+        </p>
+        <p lang="ja">
+          もし、<a>schema:givenName</a>/<a>schema:familyName</a><a>schema:additionalName</a>のセットと、
+          <a>schema:name</a>（表示に使って欲しいと本人が考えている名前が入っているはずです）
+          の両方の情報がある人物についてあった場合、（おそらく直観には反しているでしょうが）その<em>すべて</em>を文書に含めて、CSS（典型的には
+          sibling selector）を使って本質的ではない方を隠すのが良いでしょう（あるいは、<code>meta</code>エレメントを使うのも良いでしょう）。
+          こうする理由は、人間の読み手へのデメリットなしに、機械の読み手により多くの情報を提供できるからです。
         </p>
         <figure typeof="schema:SoftwareSourceCode" resource="#person-example" id="person-example">
           <pre><code>
@@ -810,17 +827,25 @@
           </code></pre>
           <figcaption>
             <span property="schema:name"></span>
-            <span property="schema:description">
+            <span lang="en" property="schema:description">
               Example of a Person. This demonstrates the use of extraneous name information using
               <code>meta</code> elements. The container is a <code>span</code> but it could be any
               other container element. This also shows how <a>schema:name</a> can be used for the
               person’s preferred display name, as distinct from the more specific structured name
               information.
             </span>
+            <span lang="ja" property="schema:description">
+              人物の例です。この例では、本質的ではない方の名前情報を、<code>meta</code>要素で示しています。
+              名前は<code>span</code>に入っていますが、他の要素でも構いません。
+              また、これはきちんと構造化された名前情報とは別に、より好ましい表示名に<a>schema:name</a>を使う例にもなっています。
+            </span>
           </figcaption>
         </figure>
-        <p>
+        <p lang="en">
           Here is also an organization:
+        </p>
+        <p lang="ja">
+          組織の例はこちらです。
         </p>
         <figure typeof="schema:SoftwareSourceCode" resource="#org-example" id="org-example">
           <pre><code>
@@ -839,8 +864,11 @@
           </code></pre>
           <figcaption>
             <span property="schema:name"></span>
-            <span property="schema:description">
+            <span lang="en" property="schema:description">
               Example of an Organization. This also features the organization’s address.
+            </span>
+            <span lang="ja" property="schema:description">
+              組織の例です。ここでは組織の住所も扱っています。
             </span>
           </figcaption>
         </figure>
@@ -864,35 +892,61 @@
           DC suggests contrasting two examples: one in which I am eternally indentured to the
           Illuminati, versus one in which I am just a hired gun.
         -->
-        <p>
+        <p lang="en">
           It is worth taking a step back to understand the importance of the <em>role</em>
           modeling. Its application is clearly exemplified in the <a href="#authors">Authors &amp;
           Contributors</a> section wherein a <a>sa:ContributorRole</a> type is used as a wrapper
           and not <a>schema:Person</a> or <a>schema:Organization</a> directly.
         </p>
-        <p>
+        <p lang="ja">
+          <em>role</em>によるモデリングの重要性を理解するために、ちょっと立ち止まりましょう。
+          <a href="#authors">Authors &amp;
+            Contributors</a>では、<a>schema:Person</a>や<a>schema:Organization</a>をだけを直接使わずに、
+          <a>sa:ContributorRole</a>の中に含める、という実例を明示しています。
+        </p>
+        <p lang="en">
           Roles are an indirection that provides additional information about a property or
           relationship. A simple overview is provided in the schema.org blog post
           <a href="http://blog.schema.org/2014/06/introducing-role.html">Introducing ’Role’</a>.
         </p>
-        <p>
+        <p lang="ja">
+          Roleによって、propertyや関連（relationship）に情報を追加することができます。
+          schema.orgのブログ記事<a href="http://blog.schema.org/2014/06/introducing-role.html">Introducing ’Role’</a>でその概要を見ることができます。
+        </p>
+        <p lang="en">
           Let’s look at the example of authorship information. Some properties of the agent who
           authored the document (person or organization), such as their name, are considered to be
           true outside the limited context of the document. These properties will be set directly on
           the agent.
         </p>
-        <p>
+        <p lang="ja">
+          著者情報の例を見てみましょう。
+          ドキュメントの著者である人または組織のproperty、例えば名前は、ドキュメント内の限られた文脈の外でも通用します。
+          こういったpropertyは、人または組織の情報に直接設定されます。
+        </p>
+        <p lang="en">
           On the other hand, other properties are considered to be specific to the agent
           <em>in their role as author of the document</em>. To give an example, were I to be
           writing the document you are currently reading as a freelancer for the Illuminati, my
           affiliation to them would be solely in my role as author and I should not be considered
           eternally indentured to them.
         </p>
-        <p>
+        <p lang="ja">
+          一方その他のpropertyは、<em>ドキュメントの著者としてのrole（役割）</em>に特有の情報です。
+          例えば、今あなたが読んでいるこの文章は、私がIlluminatiのためにフリーランスとして書いています。
+          私のこの所属（Illuminati）は著者としてのrole特有のもので、私がずっとIlluminaiに奉仕するとみなされるのは間違っています。
+        </p>
+        <p lang="en">
           When a role is used to enrich a property, the convention is to have it as the value of
           that property, and then to repeat the property on the role to point to the object. At
           first glance it sounds contrived, but it is a simple and powerful construct. To stay with
           the authoring example, the indirection would look like:
+        </p>
+        <p lang="ja">
+          propertyに情報を付加するためにroleを使うときには、まずそのpropertyの値として持ちます。
+          そして、ロールの中でそのpropertyを再度使って、人や組織などを指定します。
+          ぱっと見は不自然に感じるかもしれませんが、これはパワフルな方法です。
+          先ほどからの著者の例でいうと、この関連は以下のようになります:
         </p>
         <p>
           <a>schema:ScholarlyArticle</a> ⟼
@@ -901,9 +955,12 @@
           <em><a>schema:author</a></em> ⟼
           <a>schema:Person</a>
         </p>
-        <p>
+        <p lang="en">
           To demonstrate how properties can attach differently to the role and to the agent, we can
           unfold the authorship example further:
+        </p>
+        <p lang="ja">
+          著者の例をさらに分解することで、人や組織などの対象やロールに、どのようにpropertyが付加されるか示します。
         </p>
         <figure typeof="schema:SoftwareSourceCode" resource="#role-example" id="role-example">
           <pre>
@@ -921,10 +978,15 @@
           </pre>
           <figcaption>
             <span property="schema:name"></span>
-            <span property="schema:description">
+            <span property="schema:description" lang="en">
               Example of a role being used to model authorship. This effectively states that my
               affiliation <em>as a contributor</em> is to the Illuminati and that my name
               <em>as a person</em> is Bruce Banner.
+            </span>
+            <span property="schema:description" lang="ja">
+              著者をモデリングするroleの例です。
+              私の<em>contributorとしての</em>所属がIlluminatiであり、
+              <em>人としての</em>名前がBruce Bannerであることが、効果的に示されています。
             </span>
           </figcaption>
         </figure>
